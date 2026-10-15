@@ -1,0 +1,72 @@
+version: "v0.4"
+project:
+  name: "Counterexamples to the restricted-sumset inverse theorem in arXiv:2609.10148v2"
+  description: >-
+    Explicit finite counterexamples to Theorem A (Theorem 3.1) and Lemma 3.2
+    of Li and Liang, arXiv:2609.10148v2. In Z/13Z, sets of sizes seven and four
+    satisfy all size hypotheses and have restricted sumset size nine, but
+    neither is an arithmetic progression. A separate example in Z/11Z
+    contradicts the lower bound of Lemma 3.2 as stated.
+  authors: ["alexander"]
+  responsible_maintainers: ["alexander"]
+  license: MIT
+classification:
+  arxiv: [math.NT, math.CO]
+  msc2020: ["11B13", "11B25"]
+sources:
+  - title: "Explicit counterexamples in Z/13Z and Z/11Z to two restricted-sumset claims"
+    type: original-proof
+    relationship: other
+    id: "https://github.com/AItoBit/restricted-sumsets-counterexamples"
+    note: >-
+      This repository is the first presentation in this project of the
+      counterexample certificates, discovered by exact finite enumeration
+      during an AI-assisted source audit. This designation records their
+      development provenance, not a claim of priority over all literature.
+  - title: "Infinite Families of Counterexamples to a Conjecture of Liu and Qian and a Refined Inverse Theorem for Restricted Sumsets in Z_p"
+    authors: ["Jiantao Li", "Xinyi Liang"]
+    type: paper
+    id: "https://arxiv.org/abs/2609.10148v2"
+    location: "Theorem A, Theorem 3.1 (pages 5-6), and Lemma 3.2 (page 6)"
+    relationship: other
+    note: >-
+      The source of the claims refuted, not a source of the counterexamples
+      proved here. The exact v2 statements were checked against the supplied
+      nine-page PDF. This work does not formalize the whole paper, refute its
+      two boundary families, or assess any later correction.
+    author_endorsement: not-contacted
+status:
+  scope: >-
+    Two explicit counterexample certificates and four shared definitions.
+    Each certificate records the exact finite sets, sumset calculation, size
+    constraints, and exhaustive exclusion of arithmetic progressions.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: [propext, Classical.choice, Quot.sound]
+automation:
+  methods:
+    - method: agent
+      models: ["GPT-6"]
+      framework: "Codex with Erdos Research Orchestrator"
+      tool_setup: >-
+        Exact finite search, independent AI statement audit, Lean compiler
+        feedback, and kernel reduction with decide +kernel. No native_decide.
+  notes: >-
+    Two deliberate sorry holes occur only in Challenge. The solution is
+    original code in this substantive repository; no external proof is wrapped.
+    The user authorized publication and is the responsible maintainer.
+fidelity:
+  divergences: >-
+    Counterexamples to v2 claims, not proofs of those claims. The universal
+    paper statements are not separately encoded as propositions whose
+    negations are asserted; the certificates directly give witnesses that
+    satisfy their hypotheses and violate their conclusions. Progressions
+    include all cyclic starts and differences, even zero difference.
+review:
+  status: agent-reviewed
+  reviewers: []
+  notes: >-
+    Independent AI source-fidelity audit and separate exact computation
+    agreed. Local Lean checking and axiom inspection passed. No human expert
+    review or endorsement by the paper authors is claimed. Palomar mechanical
+    verification and editorial review are distinct subsequent checks.
